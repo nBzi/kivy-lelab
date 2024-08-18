@@ -1,0 +1,96 @@
+PageLayoutExemple:
+
+
+<PageLayoutExemple@PageLayout>:
+    MainWidget
+    StackLayoutExemple:
+    BoxLayoutExemple:
+    AnchorLayoutExemple:
+    GridLayoutExemple:
+
+
+<ScrollViewExemple@ScrollView>:
+    StackLayoutExemple:
+        size_hint: 1, None
+        height: self.minimum_height
+
+
+<StackLayoutExemple>:
+    # left-right, top-bottom
+    # orientation: "lr-bt"
+    padding: ("20dp", "20dp", "20dp", "20dp")
+    # spacing: "20dp", "20dp"
+
+
+<GridLayoutExemple>:
+    # rows
+    # cols
+    cols: 3
+    Button:
+        text:"A"
+        size_hint: None, 1
+        width: "60dp"
+    BoxLayoutExemple
+    Button:
+        text:"C"
+    Button:
+        text:"D"
+        size_hint: None, 1
+        width: "60dp"
+    Button:
+        text:"E"
+    Button:
+        text:"F"
+
+<AnchorLayoutExemple>:
+    # à utiliser à la déclaration pour connaitre le positionnement
+    # right, left, center_x
+    anchor_x: "center"
+    # bottom, top, center
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: .2, .2
+        Button:
+            text:"A"
+        Button:
+            text:"B"
+ 
+
+
+<BoxLayoutExemple>:
+    orientation: "horizontal"
+    spacing: "10dp"
+    Button:
+        text: "A"
+        size_hint: .5, .5
+        # size: "100dp", "60dp"
+        # height: "60dp"
+        # x, right, center_x une seule valeur à chaques fois
+        # y, top, center_y
+        pos_hint: { "center_y": .5}
+    BoxLayout:
+        orientation: "vertical"     
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+    Button:
+        text: "C"
+
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "100dp", "60dp"
+        pos: "200dp", "100dp"
+        color: 0, 0, 1, 1
+    
+    Label:
+        text: "Hello2"
+        size: "100dp", "60dp"
+        pos: "400dp", "200dp"
+        color: 1, 0, 0, 1
